@@ -157,7 +157,7 @@ def get_server_chokers():
     """Returns the ten most consuming URLs of processing time."""
     result = db.session.query(func.sum(Log.publisher_time).label("total_render_time"),
         Log.url).group_by(Log.url).order_by("-total_render_time").limit(10).all()
-    return [dict(total_render_time=tuple_total_render_time, url=tuple_url)
+    return [dict(total_render_time=tuple_total_render_time, url=tuple_url, pretty_url=clean_url(tuple_url), )
             for (tuple_total_render_time, tuple_url) in result]
 
 def get_memory_hogs():

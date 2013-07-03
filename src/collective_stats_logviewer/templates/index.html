@@ -62,13 +62,13 @@
           <li>
             <dl class="url-details">
               <dt class="url-help">
-                <a href="javascript:void(0);">{{ server_choker.url }}</a>&rArr;
+                <a href="javascript:void(0);" data-url="{{ server_choker.url }}">{{ server_choker.pretty_url }}</a>&rArr;
                 <span class="total-server-time">Total Server Time: {{ server_choker.total_render_time | round(2, 'common') }} seconds</span><!--Add javascript to add erro classes based avg render time-->
               </dt>
               <dd>Average time to render: <span class='avg'></span> seconds</dd>
               <dd>Num hits: <span class='num-hits'></span></dd>
               <dd>
-                <a href={{ "http://www.engin.umich.edu" + server_choker.url }}>View in new window</a>
+                <a href={{ server_choker.pretty_url }}>View in new window</a>
               </dd>
               <dd class="url-graph">
                 <div class="graph-placeholder"></div>
