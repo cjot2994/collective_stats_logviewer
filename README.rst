@@ -1,3 +1,14 @@
+============
+Run Buildout
+============
+Clone a copy of this repo. Then::
+
+  > cd collective_stats_logviewer 
+  > /path/to/your/python bootstrap.py
+  > ./bin/buildout
+
+This may take some time as it will get all the requirements you need to un this project!
+
 =======================
 Initialize the database
 =======================
@@ -7,20 +18,20 @@ Step one: (cd into collective_stats_logviewer) Type in your terminal::
 
   ./bin/flask-ctl debug initdb
 
-================
-Import Test Data
-================
-To import test data in the currnet setup, run from the base of the buildout::
-
-  ./bin/python-console scripts/file_load.py instance1.log
-
-
 =====================
 Initialize the server
 =====================
 Type in your terminal::
 
   ./bin/flask-ctl debug fg
+
+
+================
+Import Test Data
+================
+To import test data in the current setup, run from the base of the buildout::
+
+  ./bin/python-console scripts/file_load.py instance1.log
 
 
 =======
